@@ -11,6 +11,9 @@
 .contact p {
   margin-right: 12px;
 }
+.contact span {
+  margin-right: 8px;
+}
 .btn {
   display: flex;
   justify-content: center;

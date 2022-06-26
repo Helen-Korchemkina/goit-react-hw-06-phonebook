@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { deleteContact } from 'redux/slice';
-import { FcFullTrash } from 'react-icons/fc';
+import { FcFullTrash, FcBusinessman } from 'react-icons/fc';
 import s from './ContactList.module.css';
 
 const ContactList = () => {
@@ -20,6 +20,9 @@ const ContactList = () => {
     <ul className={s.list}>
       {contacts.map(({ id, name, number }) => (
         <li className={s.contact} key={id}>
+          <span>
+            <FcBusinessman />{' '}
+          </span>
           <p>{name}:</p>
           <p>{number}</p>
           <button
