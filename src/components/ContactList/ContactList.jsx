@@ -1,20 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { getVisibleContacts } from 'redux/selectors';
 import { deleteContact } from 'redux/slice';
 import { FcFullTrash, FcBusinessman } from 'react-icons/fc';
 import s from './ContactList.module.css';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.contacts.filter);
 
-  const contacts = useSelector(state =>
-    state.contacts.items
-      .map(
-        item => item.name.toLowerCase().includes(filter.toLowerCase()) && item
-      )
-      .filter(item => item !== false)
-  );
+  const contacts = useSelector(getVisibleContacts);
 
   return (
     <ul className={s.list}>

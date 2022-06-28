@@ -8,9 +8,7 @@ import s from './ContactForm.module.css';
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    const name = values.name;
-    const number = values.number;
+  const handleSubmit = ( {name, number}, { resetForm }) => {
     dispatch(addContact({ name, number }));
     resetForm();
   };
